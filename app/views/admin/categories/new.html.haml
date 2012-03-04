@@ -1,0 +1,6 @@
+.page-header
+  - if @category.category
+    %h1= "#{t('categories.new.child_for')} #{@category.category.name}"
+  - else
+    %h1= t('categories.new.child')
+= render 'form'

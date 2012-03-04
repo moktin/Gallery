@@ -1,0 +1,37 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  edit: 'edit'
+  destroy: 'delete'
+
+  news:
+    label: 'News'
+    edit: 'Edit the news'
+    new: 'Create a news'
+    create:
+      success: 'The news was succesfully created'
+    update:
+      success: 'The news was succesfully updated'
+    destroy:
+      success: 'The news was succesfully deleted'
+    need_to_be_superior_to_start_at: 'Need to be superior to start_at'
+  date:
+    formats:
+      date: "%Y-%m-%d"
+  time:
+    formats:
+      date: "%Y-%m-%d"
+
+  from: From
+  the: The
+  to: to
+
+  categories:
+    label: 'Categories'
+    new:
+      general: 'Create new Category'
+      parent: 'Create new Parent'
+      child: 'Create new sub category'
+      child_for: 'Create new sub category for'

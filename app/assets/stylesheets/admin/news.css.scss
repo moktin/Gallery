@@ -1,0 +1,14 @@
+// Place all the styles related to the admin/news controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+article {
+  margin-top: 20px;
+  border-bottom: 1px solid #eee;
+  h1 {
+    font-size: 14px;
+    small {
+      font-size: 12px;
+    }
+  }
+}

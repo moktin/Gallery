@@ -1,0 +1,32 @@
+= simple_form_for([:admin, @news], :html => { :class => 'form-vertical', :multipart => true }) do |form|
+  = form.input :title, :input_html => { :class => "span6" }
+  = form.input :content, :input_html => { :class => "span6" }
+
+  = form.input :start_at, :as => :string, :input_html => { :class => "datepicker" }
+  = form.input :end_at, :as => :string, :input_html => { :class => "datepicker" }
+  = form.input :images, :as => :file, :input_html => { :multiple => true, :accept => 'image/*' }
+  .row
+    - @news.pictures.each do |picture|
+      .span2.picture{:id => "picture_#{picture.id}"}
+        = image_tag(picture.image(:thumb), :class => 'top-aligned', :id => "picture_id")
+        = link_to('', admin_picture_path(picture), :class => 'icon-remove', :remote => true, :method => :delete)
+
+  .form-actions
+    = form.submit :class => 'btn-primary'
+
+= javascript_include_tag "ckeditor/ckeditor.js"
+
+:javascript
+  function setCkeditor() {
+      CKEDITOR.replace('news[content]', {
+          lang: 'fr',
+          toolbar:
+          [
+              ['Bold', 'Italic', 'Underline', '-', 'BulletedList', 'Link','Unlink']
+          ]
+      });
+  }
+
+  $(document).ready(function() {
+      setCkeditor();
+  })

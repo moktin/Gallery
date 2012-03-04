@@ -1,0 +1,5 @@
+.category_form
+  = simple_form_for([:admin, @category || Category.new], :html => {:class => 'form-vertical'}) do |form|
+    = form.input :name
+    = form.input :category_id, :as => :hidden
+    = form.submit t('categories.new.general')
