@@ -7,15 +7,4 @@
         = link_to(t('edit'), edit_admin_news_path(news))
         |
         = link_to(t('destroy'), admin_news_path(news), :method => :delete)
-  .row
-    .span8
-      .row
-        .span6
-          - if news.main_picture
-            = image_tag(news.main_picture.image.url(:normal), :class => 'main_image')
-        - if news.secondary_pictures.any?
-          .picture.row
-            - news.pictures.each do |picture|
-              .span1{:class => picture == news.main_picture ? "hidden" : "", :id => "mini_pic_#{picture.id}"}
-                = link_to(image_tag(picture.image.url(:thumb)), news_picture_path(news, picture), :remote => true)
-  %p= news.content.html_safe
+  = render 'news/news_content', :news => news
