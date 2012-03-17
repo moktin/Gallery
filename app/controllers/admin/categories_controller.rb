@@ -30,5 +30,11 @@ class Admin::CategoriesController < AdminController
     respond_with([:admin, @category])
   end
 
+  def update_positions
+    params[:category].each_with_index do |category_id, index|
+      Category.update(category_id, :position => index + 1)
+    end
+    render :nothing => true
+  end
 
 end

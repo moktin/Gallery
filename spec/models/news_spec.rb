@@ -11,33 +11,7 @@ describe News do
   end
 
   describe '#display_date' do
-    context 'only the start_at is set' do
-      before do
-        @news = Factory(:news, :start_at => DateTime.now)
-      end
-
-      it 'match The' do
-        @news.display_date.should =~ /The/
-      end
-      it 'does not match to' do
-        @news.display_date.should_not =~ /to/
-      end
-    end
-
-    context 'both date are set' do
-      before do
-        @news = Factory(:news, :start_at => DateTime.now, :end_at => DateTime.now + 3.days)
-      end
-
-      it 'match to' do
-        @news.display_date.should =~ /to/
-      end
-
-      it 'match from' do
-        @news.display_date.should =~ /From/
-      end
-    end
-
+    pending 'need to be speced'
   end
   describe '#main_picture' do
     before do
