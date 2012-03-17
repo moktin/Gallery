@@ -3,9 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-  $("#categories_list").sortable(
+  $("#categories_list, .sub_categories").sortable(
     opacity: 0.6,
     cursor: 'move',
     update: ->
       $.put("/admin/categories/update_positions", $(this).sortable("serialize"))
   ).disableSelection();
+

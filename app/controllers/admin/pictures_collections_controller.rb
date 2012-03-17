@@ -1,7 +1,7 @@
 class Admin::PicturesCollectionsController < AdminController
 
   def new
-    @pictures_collection = PicturesCollection.new
+    @pictures_collection = PicturesCollection.new(:category_ids => [params[:category_id].to_i])
   end
 
   def create

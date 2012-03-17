@@ -9,7 +9,7 @@ class Category < ActiveRecord::Base
   before_create :set_position
   after_destroy :clean_positions
 
-  default_scope order(:position)
+  default_scope order("categories.position")
 
   scope :roots, where(:category_id => nil)
   scope :children, where("category_id IS NOT NULL")
