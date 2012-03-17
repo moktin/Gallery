@@ -1,0 +1,11 @@
+.page-header
+  %h1= t('pictures.new')
+= simple_form_for([:admin, @pictures_collection], :html => { :class => 'form-vertical', :multipart => true, :novalidate => true }) do |form|
+  = form.input :dimensions, :input_html => { :class => "span6" }, :required => false
+  = form.input :technic, :input_html => { :class => "span6" }, :required => false
+  = form.input :materials, :input_html => { :class => "span6" }, :required => false
+  = form.input :year, :input_html => { :class => "span6" }, :required => false, :discard_day => true, :discard_month => true, :as => :date
+  = form.input :category_ids, :input_html => { :class => "span1" }, :required => false, :collection => Category.childless, :as => :check_boxes unless Category.childless.blank?
+  = form.input :pictures, :as => :file, :input_html => { :multiple => true, :accept => 'image/*' }, :required => false
+  .form-actions
+    = form.submit :class => 'btn-primary'

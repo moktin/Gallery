@@ -1,0 +1,6 @@
+.row
+  - @category_children.each do |category|
+    = link_to(category_pictures_path(category)) do
+      .span2
+        = image_tag(category.pictures.first.image.url(:small))
+        = category.name

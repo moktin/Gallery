@@ -46,13 +46,24 @@ Gallery::Application.routes.draw do
     root :to => 'home#index'
 
     resources :news, :except => [:show]
-    resources :pictures, :only => [:destroy]
-    resources :categories, :except => [:show]
+    resources :pictures, :except => [:show, :create, :new]
+    resources :pictures_collections, :only => [:create, :new]
+    resources :categories, :except => [:show] do
+      resources :pictures, :only => [:index]
+    end
+  end
+
+  resources :news, :only => [] do
+    resources :pictures, :only => [:show]
+  end
+
+  resources :categories, :only => [:show] do
+    resources :pictures, :only => [:index]
   end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'news#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -17,9 +17,28 @@ en:
     destroy:
       success: 'The news was succesfully deleted'
     need_to_be_superior_to_start_at: 'Need to be superior to start_at'
+
+  pictures:
+    for_category: "Pictures for category %{category}"
+    label: 'Pictures'
+    edit: 'Edit the picture'
+    new: 'Create pictures'
+    create:
+      success: 'The pictures were succesfully created'
+    update:
+      success: 'The picture was succesfully updated'
+    destroy:
+      success: 'The picture was succesfully deleted'
+    destroy_it: 'delete it'
+    need_to_be_superior_to_start_at: 'Need to be superior to start_at'
   date:
+    day_names: [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
+    month_names: [~, januar, february, march, april, may, juny, july, august, september, october, november, december]
     formats:
-      date: "%Y-%m-%d"
+      really_short: "%A %d"
+      some_short: "%A %d %B"
+      short: "%A %d %B %Y"
+      year: "%Y"
   time:
     formats:
       date: "%Y-%m-%d"
@@ -27,6 +46,8 @@ en:
   from: From
   the: The
   to: to
+  or: or
+  create: create
 
   categories:
     label: 'Categories'
@@ -35,3 +56,7 @@ en:
       parent: 'Create new Parent'
       child: 'Create new sub category'
       child_for: 'Create new sub category for'
+
+  from: From
+  from_to: From
+  to: to

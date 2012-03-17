@@ -1,0 +1,16 @@
+#myCarousel.carousel.span8
+  .carousel-inner
+    - @pictures.each do |picture|
+      .item
+        = image_tag(picture.image(:normal))
+        .carousel-caption
+          = name_and_year(picture)
+          = materials_technic_dimensions(picture)
+          .description= picture.description
+
+  %a.carousel-control.left{:href => "#myCarousel", :'data-slide' => "prev"} &lsaquo;
+  %a.carousel-control.right{:href => "#myCarousel", :'data-slide' => "next"} &rsaquo;
+
+:javascript
+  $('.carousel-inner .item').first().addClass('active')
+  $('.carousel').carousel('pause')

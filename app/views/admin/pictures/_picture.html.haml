@@ -1,0 +1,4 @@
+= link_to edit_admin_picture_path(picture) do
+  .pictures_item.span2.item
+    = image_tag(picture.image(:thumb))
+    %h6= picture.name

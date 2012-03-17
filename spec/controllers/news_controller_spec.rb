@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe HomeController do
+describe NewsController do
 
 end

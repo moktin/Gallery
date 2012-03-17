@@ -50,8 +50,14 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
     primary.item :home, 'news', root_path
-    primary.item :drawings, 'drawings', root_path
-    primary.item :sculptures, 'sculptures', root_path
+    Category.roots.each do |category|
+      if category.has_children? and category.has_children_with_pictures?
+        primary.item category.name.to_sym, category.name.downcase, category_path(category)
+      elsif not category.has_children? and category.pictures.any?
+        primary.item category.name.to_sym, category.name.downcase, category_pictures_path(category)
+      end
+
+    end
     primary.item :texts, 'texts', root_path
     primary.item :cv, 'cv', root_path
     primary.item :contact, 'contact', root_path

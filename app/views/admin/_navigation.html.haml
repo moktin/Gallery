@@ -1,1 +1,5 @@
 = render_navigation(:context => :admin)
+.pull-right.nav-collapse
+  %ul.nav
+    %li= link_to(t('public_website'), root_path)
+    %li= link_to(t("logout"), destroy_user_session_path)

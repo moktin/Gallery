@@ -1,0 +1,35 @@
+// Place all the styles related to the news controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.news_mini_pic.active img{
+  border: 1px solid #3c0;
+}
+
+.news_mini_pic {
+  height: 75px;
+}
+.container.news {
+  .page-header {
+    border-bottom: none;
+    h1 {
+      font-size: 12px;
+      color: #3c0;
+    }
+   margin-bottom: 0px;
+   padding-bottom: 0px;
+  }
+  article {
+    margin-top: 20px;
+    border-bottom: 1px dashed #3C0;
+    padding-bottom: 20px;
+    h1 {
+      color: #3C0;
+      font-size: 12px;
+      small {
+        font-size: 12px;
+      }
+    }
+  }
+}

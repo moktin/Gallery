@@ -1,3 +1,11 @@
 // Place all the styles related to the admin/categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul#categories_list {
+  margin-left: 0px;
+  li.category {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}

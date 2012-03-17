@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :news do
-    title = 'Super title'
-    content = 'Super Content'
-    start_at = DateTime.now
+    title 'Super title'
+    content 'Super Content'
+    start_at DateTime.now
   end
 end
