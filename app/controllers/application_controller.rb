@@ -11,4 +11,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+  def set_referer
+    session[:referer] = back_url
+  end
+
+  def get_referer
+    session.delete(:referer)
+  end
+
+  def back_url
+    request.env["HTTP_REFERER"]
+  end
 end

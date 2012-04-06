@@ -1,5 +1,6 @@
 class Admin::PicturesController < AdminController
   respond_to :html, :js
+  before_filter :set_referer, :only => [:edit]
 
   def index
     @category = Category.where(:id => params[:category_id]).first if params[:category_id]
@@ -8,6 +9,7 @@ class Admin::PicturesController < AdminController
 
   def destroy
     @picture = Picture.find(params[:id]).destroy
+    redirect_to(get_referer)
   end
 
   def edit
@@ -17,6 +19,6 @@ class Admin::PicturesController < AdminController
   def update
     @picture = Picture.find(params[:id])
     @picture.update_attributes(params[:picture])
-    respond_with([:admin, @picture], :location => admin_pictures_path)
+    redirect_to(get_referer)
   end
 end

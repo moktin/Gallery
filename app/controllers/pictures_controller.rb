@@ -12,6 +12,6 @@ class PicturesController < ApplicationController
 
   def index
     @category = Category.find(params[:category_id])
-    @pictures = @category.pictures
+    @pictures = PictureDecorator.decorate(@category.pictures)
   end
 end

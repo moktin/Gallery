@@ -4,8 +4,8 @@
       .item
         = image_tag(picture.image(:normal))
         .carousel-caption
-          = name_and_year(picture)
-          = materials_technic_dimensions(picture)
+          = picture.name_and_year
+          = picture.materials_technic_dimensions
           .description= picture.description
 
   - if @pictures.length > 1
