@@ -5,7 +5,7 @@ gem 'rails', '3.2.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'pg'
 gem 'haml-rails'
 gem 'simple_form',   '~> 2.0'
 gem 'devise',   '~> 2.0'
@@ -13,6 +13,7 @@ gem 'simple-navigation'
 gem 'paperclip', '~> 2.7'
 gem 'kaminari'
 gem 'draper'
+gem 'thin'
 
 
 # Gems used only for assets and not required
