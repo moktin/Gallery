@@ -6,7 +6,7 @@
       = t('pictures.label')
     %small.pull-right= link_to(t('create'), new_admin_pictures_collection_path(:category_id => @category ? @category.id : nil), :class => 'btn btn-primary')
 
-#pictures_list
-
-  .row= render @pictures
-  = paginate(@pictures)
+.row
+  %ul#pictures_list{:'data-category-id' => @category.id}
+    = render @pictures
+  = paginate(@pictures) unless @category

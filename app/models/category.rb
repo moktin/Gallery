@@ -2,7 +2,7 @@ class Category < ActiveRecord::Base
   belongs_to :category, :foreign_key => 'category_id'
   has_many :categories, :dependent => :destroy, :class_name => 'Category'
   has_many :category_pictures
-  has_many :pictures, :through => :category_pictures
+  has_many :pictures, :through => :category_pictures, :order => 'pictures.position'
 
   validates :name, :presence => true, :uniqueness => { :scope => :category_id}
 
@@ -42,4 +42,9 @@ class Category < ActiveRecord::Base
   def self.update_positions(categories_positions)
     categories_positions.each_with_index { |category_id, index| update(category_id, :position => index + 1) }
   end
+
+  def update_pictures_positions(pictures_positions)
+    pictures_positions.each_with_index { |picture_id, index| self.pictures.update(picture_id, :position => index + 1) }
+  end
+
 end

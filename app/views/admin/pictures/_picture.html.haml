@@ -1,4 +1,4 @@
-= link_to edit_admin_picture_path(picture) do
-  .pictures_item.span2.item
+%li.pictures_item.span1.item{:id => "picture_#{picture.id}"}
+  = link_to edit_admin_picture_path(picture) do
     = image_tag(picture.image(:thumb))
     %h6= picture.name

@@ -30,9 +30,4 @@ class Admin::CategoriesController < AdminController
     respond_with([:admin, @category])
   end
 
-  def update_positions
-    Category.update_positions(params[:category])
-    render :nothing => true
-  end
-
 end

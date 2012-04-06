@@ -20,4 +20,5 @@ class Picture < ActiveRecord::Base
     pictures.each { |picture| new_pictures << Picture.create(params.merge(:image => picture))} if pictures
     new_pictures
   end
+
 end
