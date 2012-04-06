@@ -7,6 +7,6 @@
     %small.pull-right= link_to(t('create'), new_admin_pictures_collection_path(:category_id => @category ? @category.id : nil), :class => 'btn btn-primary')
 
 .row
-  %ul#pictures_list{:'data-category-id' => @category.id}
+  %ul#pictures_list{:'data-category-id' => @category ? @category.id : nil}
     = render @pictures
   = paginate(@pictures) unless @category
