@@ -3,7 +3,7 @@ class Admin::NewsController < AdminController
   before_filter :find_news, :except => [:index, :new, :create]
 
   def index
-    @news = News.page(params[:page]).per(10)
+    @news = NewsDecorator.decorate(News.page(params[:page]).per(20))
   end
 
   def new

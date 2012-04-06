@@ -8,8 +8,9 @@
           = materials_technic_dimensions(picture)
           .description= picture.description
 
-  %a.carousel-control.left{:href => "#myCarousel", :'data-slide' => "prev"} &lsaquo;
-  %a.carousel-control.right{:href => "#myCarousel", :'data-slide' => "next"} &rsaquo;
+  - if @pictures.length > 1
+    %a.carousel-control.left{:href => "#myCarousel", :'data-slide' => "prev"} &lsaquo;
+    %a.carousel-control.right{:href => "#myCarousel", :'data-slide' => "next"} &rsaquo;
 
 :javascript
   $('.carousel-inner .item').first().addClass('active')

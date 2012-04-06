@@ -31,9 +31,7 @@ class Admin::CategoriesController < AdminController
   end
 
   def update_positions
-    params[:category].each_with_index do |category_id, index|
-      Category.update(category_id, :position => index + 1)
-    end
+    Category.update_positions(params[:category])
     render :nothing => true
   end
 

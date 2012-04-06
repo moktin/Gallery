@@ -10,6 +10,10 @@ describe News do
     @news.should_not be_valid
   end
 
+  it 'does raise error if start_at is nill but end_at is filled' do
+    expect { News.create(:end_at => DateTime.now)}.not_to raise_error
+  end
+
   describe '#display_date' do
     pending 'need to be speced'
   end

@@ -38,4 +38,8 @@ class Category < ActiveRecord::Base
   def clean_positions
     brothers.where("position > ?", self.position).update_all("categories.position = categories.position - 1")
   end
+
+  def self.update_positions(categories_positions)
+    categories_positions.each_with_index { |category_id, index| update(category_id, :position => index + 1) }
+  end
 end

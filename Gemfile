@@ -12,6 +12,8 @@ gem 'devise',   '~> 2.0'
 gem 'simple-navigation'
 gem 'paperclip', '~> 2.7'
 gem 'kaminari'
+gem 'draper'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
