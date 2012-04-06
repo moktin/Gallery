@@ -3,6 +3,8 @@ class Picture < ActiveRecord::Base
   has_many :category_pictures
   has_many :categories, :through => :category_pictures
 
+  default_scope order("pictures.position")
+
   has_attached_file :image,
   :styles => {
     :thumb => "182x70>",
