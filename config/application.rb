@@ -56,5 +56,6 @@ module Gallery
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
+    config.assets.precompile += %w( jquery-ui-1.8.18.custom.css )
   end
 end
