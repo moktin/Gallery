@@ -44,7 +44,7 @@ describe Category do
       p3 = Factory(:category)
       c1 = Factory(:category, :category => p1)
       c2 = Factory(:category, :category => p2)
-      Category.childless.should =~ [p3, c1, c2]
+      Category.childless.sort.should == [c2, p3, c1].sort
     end
   end
 

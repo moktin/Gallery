@@ -56,13 +56,7 @@ SimpleNavigation::Configuration.run do |navigation|
       elsif not category.has_children? and category.pictures.any?
         primary.item category.name.to_sym, category.name.downcase, category_pictures_path(category)
       end
-
     end
-    primary.item :texts, 'texts', root_path
-    primary.item :cv, 'cv', root_path
-    primary.item :contact, 'contact', root_path
-    primary.item :links, 'links', root_path
-
   end
 
 end

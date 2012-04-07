@@ -19,6 +19,9 @@ class Category < ActiveRecord::Base
     where(:category_id => category.category_id).where(category.id ? ["categories.id != ?", category.id] : "categories.id IS NOT NULL")
   }
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   def has_children?
     self.class.where(:category_id => self.id).any?
   end
@@ -36,7 +39,7 @@ class Category < ActiveRecord::Base
   end
 
   def clean_positions
-    brothers.where("categories.position > ?", self.position).update_all("categories.position = categories.position - 1")
+    brothers.where("categories.position > ?", self.position).update_all("position = position - 1")
   end
 
   def self.update_positions(categories_positions)

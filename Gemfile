@@ -14,6 +14,7 @@ gem 'paperclip', '~> 2.7'
 gem 'kaminari'
 gem 'draper'
 gem 'thin'
+gem "friendly_id", "~> 4.0.1"
 #gem "ckeditor", "3.7.0.rc3"
 
 # Gems used only for assets and not required

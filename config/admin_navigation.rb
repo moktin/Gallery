@@ -53,10 +53,6 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :news, 'news', admin_news_index_path
     primary.item :categories, 'categories', admin_categories_path
     primary.item :pictures, 'pictures', admin_pictures_path
-    primary.item :texts, 'texts', admin_root_path
-    primary.item :cv, 'cv', admin_root_path
-    primary.item :contact, 'contact', admin_root_path
-    primary.item :links, 'links', admin_root_path
 
   end
 
