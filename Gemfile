@@ -14,7 +14,7 @@ gem 'paperclip', '~> 2.7'
 gem 'kaminari'
 gem 'draper'
 gem 'thin'
-gem "ckeditor", "3.7.0.rc3"
+#gem "ckeditor", "3.7.0.rc3"
 
 # Gems used only for assets and not required
 # in production environments by default.
