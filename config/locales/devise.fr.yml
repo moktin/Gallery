@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-en:
+fr:
   errors:
     messages:
       expired: "a expiré, merci d'en demandé un nouveau"
@@ -18,12 +18,12 @@ en:
       unconfirmed: 'Vous devez confirmer votre compte pour continuer.'
       locked: 'Votre compte est bloqué.'
       invalid: 'Mauvais compte ou mauvais mot de passe.'
-      invalid_token: 'Cléf d\'authentification non valide.'
+      invalid_token: "Cléf d'authentification non valide."
       timeout: 'Votre session a expiré, merci de vous reconnecter pour continuer.'
-      inactive: 'Votre compte n\'a pas été activé pour le moment.'
+      inactive: "Votre compte n'a pas été activé pour le moment."
     sessions:
-      sign_in: 'Se connecté'
-      sign_out: 'Se déconnecté'
+      sign_in: 'Se connecter'
+      sign_out: 'Se déconnecter'
       signed_in: 'Connection réussi.'
       signed_out: 'Déconnection réussi.'
     passwords:

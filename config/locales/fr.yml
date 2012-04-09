@@ -1,7 +1,7 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+fr:
   activemodel:
     models:
       pictures_collection: "Collection d'images"
@@ -35,14 +35,14 @@ en:
   pictures:
     for_category: "Images pour la catégorie %{category}"
     label: 'Images'
-    edit: 'Editer l\'image'
+    edit: "Editer l'image"
     new: 'Créer une image'
     create:
-      success: 'L\'image a été créé avec succès'
+      success: "L'image a été créé avec succès"
     update:
-      success: 'L\'image a été édité avec succès'
+      success: "L'image a été édité avec succès"
     destroy:
-      success: 'L\'image a été supprimé avec succès'
+      success: "L'image a été supprimé avec succès"
     destroy_it: 'Supprimer'
   date:
     day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
@@ -74,3 +74,4 @@ en:
   to: au
   name: nom
   online: En ligne
+  public_website: Site public

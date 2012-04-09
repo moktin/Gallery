@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :set_user_language
 
   def require_adminship
     unless (current_user and current_user.admin?)
@@ -22,5 +23,10 @@ class ApplicationController < ActionController::Base
 
   def back_url
     request.env["HTTP_REFERER"]
+  end
+
+  private
+  def set_user_language
+    I18n.locale = session[:language] || config.i18n.default_locale
   end
 end

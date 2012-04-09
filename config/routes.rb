@@ -74,6 +74,7 @@ Gallery::Application.routes.draw do
     resources :pictures, :only => [:index]
   end
 
+  resources :languages, :only => [:update]
   resources :pages, :only => [:show]
 
   # You can have the root of your site routed with "root"
