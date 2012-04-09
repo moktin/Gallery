@@ -1,2 +1,9 @@
-- title(@page.name)
+- title(@page.name, false)
+.page-header
+  %h1
+    = @page.name
+    %small.pull-right
+      = link_to(t('edit'), edit_admin_page_path(@page), :class => 'btn btn-primary')
+      = link_to(t('destroy'), admin_page_path(@page), :method => :delete, :class => 'btn btn-primary')
+
 = @page.content.html_safe
