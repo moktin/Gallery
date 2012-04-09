@@ -5,6 +5,7 @@ describe Page do
   it { should have_db_column(:slug).of_type(:string)}
   it { should have_db_column(:content).of_type(:text)}
   it { should have_db_column(:position).of_type(:integer)}
+  it { should have_db_column(:online).of_type(:boolean)}
 
   it { should validate_presence_of(:name)}
   it { should validate_presence_of(:content)}

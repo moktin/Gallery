@@ -1,0 +1,23 @@
+= simple_form_for([:admin, @page], :html => { :class => 'form-vertical'}) do |form|
+  = form.input :name, :input_html => { :class => "span6" }
+  = form.input :content, :input_html => { :class => "span6" }
+  = form.input :online
+  .form-actions.clear
+    = form.submit :class => 'btn-primary'
+
+= javascript_include_tag "ckeditor/ckeditor.js"
+
+:javascript
+  function setCkeditor() {
+      CKEDITOR.replace('page[content]', {
+          lang: 'fr',
+          toolbar:
+          [
+              ['Bold', 'Italic', 'Underline', '-', 'BulletedList', 'Link','Unlink']
+          ]
+      });
+  }
+
+  $(document).ready(function() {
+      setCkeditor();
+  })

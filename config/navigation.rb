@@ -57,6 +57,9 @@ SimpleNavigation::Configuration.run do |navigation|
         primary.item category.name.to_sym, category.name.downcase, category_pictures_path(category)
       end
     end
+    Page.online.each do |page|
+      primary.item page.name.to_sym, page.name.downcase, page_path(page)
+    end
   end
 
 end

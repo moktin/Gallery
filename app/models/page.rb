@@ -8,6 +8,10 @@ class Page < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  default_scope order('pages.position')
+
+  scope :online, where(:online => true)
+
   def set_position
     self.position = self.class.count + 1
   end

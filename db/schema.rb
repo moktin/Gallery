@@ -47,10 +47,12 @@ ActiveRecord::Schema.define(:version => 20120409080228) do
     t.text     "content"
     t.string   "slug"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "online",     :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
+  add_index "pages", ["online"], :name => "index_pages_on_online"
   add_index "pages", ["slug"], :name => "index_pages_on_slug"
 
   create_table "pictures", :force => true do |t|

@@ -9,9 +9,9 @@ en:
       pictures_collection:
         category_ids: Category
 
-  hello: "Hello world"
   edit: 'edit'
   destroy: 'delete'
+  show: 'show'
 
   news:
     label: 'News'
@@ -25,6 +25,10 @@ en:
       success: 'The news was succesfully deleted'
     need_to_be_superior_to_start_at: 'Need to be superior to start_at'
 
+  pages:
+    label: 'Pages'
+    new: 'Create a page'
+    edit: 'Edit the page %{page}'
   pictures:
     for_category: "Pictures for category %{category}"
     label: 'Pictures'
@@ -67,3 +71,5 @@ en:
   from: From
   from_to: From
   to: to
+  name: Name
+  online: Online

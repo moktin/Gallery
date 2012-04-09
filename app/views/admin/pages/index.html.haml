@@ -1,0 +1,14 @@
+- title(t('pages.label'), false)
+.page-header
+  %h1
+    = t('pages.label')
+    %small.pull-right= link_to(t('create'), new_admin_page_path, :class => 'btn btn-primary')
+
+%table.table.table-bordered.table-striped#pages_list
+  %thead
+    %tr
+      %th= t('name')
+      %th= t('online')
+      %th= t('actions')
+  %tbody
+    = render @pages

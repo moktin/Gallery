@@ -53,6 +53,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :news, 'news', admin_news_index_path
     primary.item :categories, 'categories', admin_categories_path
     primary.item :pictures, 'pictures', admin_pictures_path
+    primary.item :pages, 'pages', admin_pages_path
 
   end
 
