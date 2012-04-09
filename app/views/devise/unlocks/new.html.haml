@@ -1,0 +1,10 @@
+- title t('devise.unlocks.resend_instructions')
+
+= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => 'form-vertical' }) do |f|
+  = f.error_notification
+  = f.input :email, :required => true
+
+  .form-actions
+    = f.button :submit, "Resend unlock instructions"
+
+= render "links"

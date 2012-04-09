@@ -1,0 +1,13 @@
+- title t('devise.registrations.sign_up')
+
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical') do |f|
+  = f.error_notification
+
+  = f.input :email, :required => true, :autofocus => true
+  = f.input :password, :required => true
+  = f.input :password_confirmation, :required =>
+
+  .form-actions
+    = f.button :submit, t('devise.registrations.sign_up')
+
+= render "links"

@@ -1,0 +1,12 @@
+- title t('devise.confirmations.resend_instructions')
+
+= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, :class => 'form-vertical' }) do |f|
+  = f.error_notification
+
+  = f.input :email, :required => true
+
+  .form-actions
+    = f.button :submit, t('devise.confirmations.resend_instructions'), :class => 'btn-primary'
+
+= render "links"
+
