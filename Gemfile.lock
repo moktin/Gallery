@@ -93,6 +93,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.1.0)
+    mysql2 (0.3.11)
     nokogiri (1.5.0)
     orm_adapter (0.0.6)
     paperclip (2.7.0)
@@ -100,7 +101,6 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
-    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.1)
@@ -195,8 +195,8 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   kaminari
+  mysql2
   paperclip (~> 2.7)
-  pg
   rails (= 3.2.0)
   rspec-rails (~> 2.6)
   sass-rails (~> 3.2.3)

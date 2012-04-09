@@ -15,7 +15,7 @@ class Admin::PagesController < AdminController
 
   def create
     @page = Page.new(params[:page])
-    if @page.create
+    if @page.save
       respond_with([:admin, @page])
     else
       render :new
