@@ -1,0 +1,73 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  errors:
+    messages:
+      expired: "a expiré, merci d'en demandé un nouveau"
+      not_found: "pas trouvé"
+      already_confirmed: "étais déjà confirmé, merci de vous connecter"
+      not_locked: "n'étais pas bloqué"
+      not_saved:
+        one: "1 erreur a empeché cet %{resource} d'être sauvegardé:"
+        other: "%{count} erreurs ont empeché cet %{resource} d'être sauvegardé:"
+
+  devise:
+    failure:
+      already_authenticated: 'Vous êtes déjà connecté.'
+      unauthenticated: 'Vous devez vous connecter ou créer un compte pour continuer.'
+      unconfirmed: 'Vous devez confirmer votre compte pour continuer.'
+      locked: 'Votre compte est bloqué.'
+      invalid: 'Mauvais compte ou mauvais mot de passe.'
+      invalid_token: 'Cléf d\'authentification non valide.'
+      timeout: 'Votre session a expiré, merci de vous reconnecter pour continuer.'
+      inactive: 'Votre compte n\'a pas été activé pour le moment.'
+    sessions:
+      sign_in: 'Se connecté'
+      sign_out: 'Se déconnecté'
+      signed_in: 'Connection réussi.'
+      signed_out: 'Déconnection réussi.'
+    passwords:
+      new: 'Nouveau mot de passe'
+      confirmation: 'Confirmez votre nouveau mot de passe'
+      change: 'Changer mon mot de passe'
+      send_reset_instructions: 'Envoyer moi les instructions pour réinitialiser mon password.'
+      forgot: 'Mot de passe oublié ?'
+      send_instructions: 'Vous allez recevoir un email avec les instructions à suivre pour réinitialiser votre mot de passe dans quelques instants.'
+      updated: 'Votre mot de passe a été changé. Vous êtes maintenant connecté.'
+      updated_not_active: 'Votre mot de passe a été changé.'
+      send_paranoid_instructions: "Si votre email existe dans notre base de données, vous allez recevoir un lien pour récupérer un accès à votre compte"
+    confirmations:
+      resend_instructions: 'Envoyer les informations de confirmation à nouveau'
+      send_instructions: 'Vous allez recevoir un email avec les informations pour confirmer votre compte dans quelques instants.'
+      send_paranoid_instructions: 'Si votre email existe dans notre base de données, vous allez recevoir un lien vous permettant de confirmer votre compte.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      edit: 'Editer %{resource}'
+      update: 'Sauvegarder'
+      unhappy: Pas content ?
+      leave_blank: "Laissez blanc si vous ne voulez pas le changer"
+      give_password: "Nous avons besoin de votre mot de passe actuel pour confirmer les changements"
+      canceledit: 'Supprimer mon compte'
+      sign_up: "S'enregistrer"
+      signed_up: 'Bienvenue! Vous vous êtes bien enregistré.'
+      signed_up_but_unconfirmed: "Un message avec un lien de confirmation a été envoyé à votre email addresse. Merci d'ouvrir ce lien pour activer votre compte."
+      signed_up_but_inactive: "Vous vous êtes bien enregistré. Cependant, nous ne pouvons pas vous connecter car votre compte n'est toujours pas actif."
+      signed_up_but_locked: 'Vous êtes bien enregistré. Cependant, nous ne pouvons pas vous connecter car votre compte est bloqué.'
+      updated: 'Vous avez mis votre compte à jours'
+      update_needs_confirmation: "Vous avec mis votre compte à jours, mais nous devons vérifier votre nouvel adresse email. Consultez vos email et cliquer sur le liens de confirmation pour activer votre nouvelle adresse."
+      destroyed: 'Au revoir! Votre compte a été supprimé. Nous espérons vous revoir prochainement.'
+    unlocks:
+      rensend_instructions: Renvoyer les informations pour le déblocage de mon compte.
+      send_instructions: 'Vous allez recevoir un email avec les informastions pour débloquer votre compte.'
+      unlocked: 'Votre compte a été débloquer. Connectez-vous pour continuer.'
+      send_paranoid_instructions: 'Si votre compte existe, vous allez recevoir un email avec les informations pour le débloquer.'
+    omniauth_callbacks:
+      success: 'Successfully authorized from %{kind} account.'
+      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instructions pour la confirmation de votre compte.'
+      reset_password_instructions:
+        subject: 'Annulé les instructions pour le mot de passe'
+      unlock_instructions:
+        subject: 'Instructions pour débloquer votre compte.'

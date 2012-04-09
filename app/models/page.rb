@@ -1,12 +1,12 @@
 class Page < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   validates :name, :content, :presence => true
   validates :name, :uniqueness => true
 
   before_create :set_position
   after_destroy :clean_positions
-
-  extend FriendlyId
-  friendly_id :name, use: :slugged
 
   default_scope order('pages.position')
 

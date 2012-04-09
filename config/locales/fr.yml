@@ -1,0 +1,76 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activemodel:
+    models:
+      pictures_collection: "Collection d'images"
+    attributes:
+      pictures_collection:
+        category_ids: Catégorie
+      news:
+        start_at: Date de début
+        end_at: Date de fin
+
+  edit: 'editer'
+  destroy: 'supprimer'
+  show: 'voir'
+
+  news:
+    label: 'News'
+    edit: 'Editer la news'
+    new: 'Créer une news'
+    create:
+      success: 'La news a été créer avec succès'
+    update:
+      success: 'La news a été éditer avec succès'
+    destroy:
+      success: 'La news a été supprimer avec succès'
+    need_to_be_superior_to_start_at: 'doit être supérieur à la date de début'
+
+  pages:
+    label: 'Pages'
+    new: 'Créer une page'
+    edit: 'Editer la page %{page}'
+  pictures:
+    for_category: "Images pour la catégorie %{category}"
+    label: 'Images'
+    edit: 'Editer l\'image'
+    new: 'Créer une image'
+    create:
+      success: 'L\'image a été créé avec succès'
+    update:
+      success: 'L\'image a été édité avec succès'
+    destroy:
+      success: 'L\'image a été supprimé avec succès'
+    destroy_it: 'Supprimer'
+  date:
+    day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
+    month_names: [~, janvier, février, mars, avril, mai, juin, juillet, aôut, septembre, octobre, novembre, decembre]
+    formats:
+      really_short: "%A %d"
+      some_short: "%A %d %B"
+      short: "%A %d %B %Y"
+      year: "%Y"
+  time:
+    formats:
+      date: "%Y-%m-%d"
+
+  the: le
+  to: au
+  or: ou
+  create: créer
+
+  categories:
+    label: 'Catégories'
+    new:
+      general: 'Créer une nouvelle catégorie'
+      parent: 'Créer un nouveau parent'
+      child: 'Créer une sous catégorie'
+      child_for: 'Créer une sous catégorie pour'
+
+  from: à partir du
+  from_to: du
+  to: au
+  name: nom
+  online: En ligne

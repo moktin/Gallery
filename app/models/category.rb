@@ -1,5 +1,9 @@
 class Category < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   belongs_to :category, :foreign_key => 'category_id'
+
   has_many :categories, :dependent => :destroy, :class_name => 'Category'
   has_many :category_pictures
   has_many :pictures, :through => :category_pictures
@@ -19,9 +23,6 @@ class Category < ActiveRecord::Base
     where(:category_id => category.category_id).where(category.id ? ["categories.id != ?", category.id] : "categories.id IS NOT NULL")
   }
 
-  extend FriendlyId
-  friendly_id :name, use: :slugged
-
   def has_children?
     self.class.where(:category_id => self.id).any?
   end
@@ -30,12 +31,12 @@ class Category < ActiveRecord::Base
     self.class.with_pictures.where(:category_id => self.id).any?
   end
 
-  def set_position
-    self.position = brothers.count + 1
-  end
-
   def brothers
     self.class.brothers_of(self)
+  end
+
+  def set_position
+    self.position = brothers.count + 1
   end
 
   def clean_positions
@@ -47,7 +48,7 @@ class Category < ActiveRecord::Base
   end
 
   def update_pictures_positions(pictures_positions)
-    pictures_positions.each_with_index { |picture_id, index| self.pictures.update(picture_id, :position => index + 1) }
+    pictures_positions.each_with_index { |picture_id, index| self.category_pictures.where(:picture_id => picture_id).first.update_attribute(:position, index + 1) }
   end
 
 end

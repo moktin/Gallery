@@ -5,4 +5,5 @@ describe CategoryPicture do
   it { should belong_to(:picture)}
 
   it { should have_db_column(:position)}
+
 end

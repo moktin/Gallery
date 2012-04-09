@@ -15,7 +15,7 @@ gem 'kaminari'
 gem 'draper'
 gem 'thin'
 gem "friendly_id", "~> 4.0.1"
-#gem "ckeditor", "3.7.0.rc3"
+gem 'globalize3'
 
 # Gems used only for assets and not required
 # in production environments by default.
