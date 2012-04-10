@@ -6,9 +6,7 @@ class News < ActiveRecord::Base
   default_scope order('created_at DESC')
 
   def images=(images)
-    images.each do |image|
-      pictures << Picture.new(:image => image)
-    end
+    images.each { |image| pictures << Picture.new(:image => image) }
   end
 
   def main_picture
