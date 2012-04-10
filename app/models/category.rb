@@ -48,7 +48,9 @@ class Category < ActiveRecord::Base
   end
 
   def update_pictures_positions(pictures_positions)
-    pictures_positions.each_with_index { |picture_id, index| self.category_pictures.where(:picture_id => picture_id).first.update_attribute(:position, index + 1) }
+    pictures_positions.each_with_index do |picture_id, index|
+      self.category_pictures.where(:picture_id => picture_id).first.update_attribute(:position, index + 1)
+    end
   end
 
 end
