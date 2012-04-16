@@ -1,3 +1,3 @@
 .page-header
-  %h1= "#{t('news.edit')}"
+  %h1= params[:translate] ? t('news.translate') : t('news.edit')
 = render 'form'

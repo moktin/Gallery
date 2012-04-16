@@ -1,5 +1,5 @@
 = render_navigation
 .pull-right.nav-collapse
   %ul.nav
-    %li= link_to('fr', language_path('fr'), :method => :put)
-    %li= link_to('en', language_path('en'), :method => :put)
+    %li{:class => current_locale == :fr ? 'selected' : ''}= link_to('fr', language_path('fr'), :method => :put)
+    %li{:class => current_locale == :en ? 'selected' : ''}= link_to('en', language_path('en'), :method => :put)

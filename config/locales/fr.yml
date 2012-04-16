@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 fr:
+
+  helpers:
+     submit:
+       create: "Créer"
+       update: "Sauver"
   errors:
     messages:
       blank: Ne doit pas être vide
@@ -32,6 +37,7 @@ fr:
   show: 'voir'
 
   news:
+    translate: 'Traduire la news'
     label: 'News'
     edit: 'Editer la news'
     new: 'Créer une news'
@@ -97,3 +103,4 @@ fr:
   fr: Francais
   en: Anglais
   and_in: et en
+  translate: traduire

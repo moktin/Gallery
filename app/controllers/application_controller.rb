@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_user_language
 
+  helper_method :current_locale, :other_locale
+
   def require_adminship
     unless (current_user and current_user.admin?)
       flash[:alert] = t('administrations.access_denied')
@@ -25,8 +27,17 @@ class ApplicationController < ActionController::Base
     request.env["HTTP_REFERER"]
   end
 
+
+  def other_locale
+    current_locale == :fr ? :en : :fr
+  end
+
+  def current_locale
+    I18n.locale.to_sym
+  end
+
   private
   def set_user_language
-    I18n.locale = session[:language] || I18n.default_locale
+    I18n.locale = params[:locale] || session[:language] || I18n.default_locale
   end
 end

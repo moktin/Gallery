@@ -2,6 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+
+  helpers:
+     submit:
+       create: "Create a %{model}"
+       update: "Update %{model}"
+
   errors:
     attributes:
       base:
@@ -13,6 +19,16 @@ en:
       attributes:
       pictures_collection:
         category_ids: Category
+
+  activerecord:
+    models:
+      category: Categorie
+    attributes:
+      news:
+        start_at: Start date
+        end_at: End date
+        title: Title
+        content: Content
       category:
         name: Name
         name_fr: Name in french
@@ -23,6 +39,7 @@ en:
   show: 'show'
 
   news:
+    translate: 'Translate the news'
     label: 'News'
     edit: 'Edit the news'
     new: 'Create a news'
@@ -90,3 +107,4 @@ en:
   fr: French
   en: English
   and_in: and
+  translate: translate

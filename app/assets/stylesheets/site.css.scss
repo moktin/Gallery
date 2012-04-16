@@ -86,8 +86,12 @@ a:hover {
   color: #222;
 }
 
-.navbar .nav li.selected a.selected {
+.navbar .nav li.selected a {
   color: #3c0;
   text-shadow: none;
-  font-weight: bold;
+}
+
+.navbar .nav li a:hover {
+  color: #3c0;
+  text-shadow: none;
 }
