@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409165806) do
+ActiveRecord::Schema.define(:version => 20120413172012) do
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
     t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "position"
     t.string   "slug"
+    t.string   "name_fr"
+    t.string   "name_en"
   end
 
   add_index "categories", ["category_id"], :name => "index_categories_on_category_id"
@@ -34,12 +35,14 @@ ActiveRecord::Schema.define(:version => 20120409165806) do
   add_index "category_pictures", ["category_id", "picture_id"], :name => "index_category_pictures_on_category_id_and_picture_id"
 
   create_table "news", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
     t.date     "start_at"
     t.date     "end_at"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "title_fr"
+    t.string   "title_en"
+    t.text     "content_fr"
+    t.text     "content_en"
   end
 
   create_table "pages", :force => true do |t|

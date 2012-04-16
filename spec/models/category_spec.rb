@@ -1,16 +1,23 @@
 require 'spec_helper'
 
 describe Category do
-  it { should have_db_column(:name).of_type(:string)}
+  it { should have_db_column(:name_fr).of_type(:string)}
+  it { should have_db_column(:name_en).of_type(:string)}
   it { should have_many(:pictures).through(:category_pictures)}
   it { should belong_to(:category)}
   it { should have_many(:categories).dependent(:destroy)}
 
-  it { should validate_presence_of(:name)}
+  it { should validate_presence_of(:name_fr)}
+  it { should validate_presence_of(:name_en)}
 
-  it 'validates uniqueness of name' do
+  it 'validates uniqueness of name_fr' do
     Factory(:category)
-    Category.new.should validate_uniqueness_of(:name).scoped_to(:category_id)
+    Category.new.should validate_uniqueness_of(:name_fr).scoped_to(:category_id)
+  end
+
+  it 'validates uniqueness of name_en' do
+    Factory(:category)
+    Category.new.should validate_uniqueness_of(:name_en).scoped_to(:category_id)
   end
 
   describe '.roots' do
@@ -38,13 +45,23 @@ describe Category do
   end
 
   describe '.childless' do
-    it 'return only the category without children' do
-      p1 = Factory(:category)
-      p2 = Factory(:category)
-      p3 = Factory(:category)
-      c1 = Factory(:category, :category => p1)
-      c2 = Factory(:category, :category => p2)
-      Category.childless.sort.should == [c2, p3, c1].sort
+    context 'when there is kid' do
+      it 'return only the category without children' do
+        p1 = Factory(:category)
+        p2 = Factory(:category)
+        p3 = Factory(:category)
+        c1 = Factory(:category, :category => p1)
+        c2 = Factory(:category, :category => p2)
+        Category.childless.sort.should == [c2, p3, c1].sort
+      end
+    end
+
+    context 'when there is no kid' do
+      it 'return only the category without child' do
+        p1 = Factory(:category)
+        p2 = Factory(:category)
+        Category.childless.sort.should == [p1, p2].sort
+      end
     end
   end
 

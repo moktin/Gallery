@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :category do
-    sequence(:name){|n| "category_#{n}" }
+    sequence(:name_fr){|n| "categorie_#{n}" }
+    sequence(:name_en){|n| "category_#{n}" }
   end
 end

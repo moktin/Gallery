@@ -2,12 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  errors:
+    attributes:
+      base:
+        translation_missing: Please complete translation too !
   activemodel:
     models:
       pictures_collection: Picture Collection
-    attributes:
+      category: Category
+      attributes:
       pictures_collection:
         category_ids: Category
+      category:
+        name: Name
+        name_fr: Name in french
+        name_en: Name in english
 
   edit: 'edit'
   destroy: 'delete'
@@ -74,3 +83,10 @@ en:
   name: Name
   online: Online
   public_website: Public Website
+
+  french_translation: French traduction
+
+  available_in: Available in
+  fr: French
+  en: English
+  and_in: and

@@ -1,7 +1,5 @@
 .page-header
-  %h1
-    = t('news.label')
-    %small.pull-right= link_to(t('create'), new_admin_news_path, :class => 'btn btn-primary')
+  = link_to(t('create'), new_admin_news_path, :class => 'btn btn-primary')
 #news_list.row
   = render @news
   = paginate(@news)

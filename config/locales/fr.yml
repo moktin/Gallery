@@ -2,15 +2,30 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 fr:
+  errors:
+    messages:
+      blank: Ne doit pas être vide
+      taken: est déjà pris
   activemodel:
     models:
       pictures_collection: "Collection d'images"
+      category: Categorie
     attributes:
       pictures_collection:
         category_ids: Catégorie
+  activerecord:
+    models:
+      category: Categorie
+    attributes:
       news:
         start_at: Date de début
         end_at: Date de fin
+        title: Titre
+        content: Contenu
+      category:
+        name: Nom
+        name_fr: Nom en francais
+        name_en: Nom en anglais
 
   edit: 'editer'
   destroy: 'supprimer'
@@ -75,3 +90,10 @@ fr:
   name: nom
   online: En ligne
   public_website: Site public
+
+  english_translation: Traduction en anglais
+
+  available_in: Disponible en
+  fr: Francais
+  en: Anglais
+  and_in: et en

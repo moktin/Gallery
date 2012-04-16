@@ -78,7 +78,7 @@ a {
 }
 
 a:hover {
-  color: #999;
+  color: #3c0;
   text-decoration: none;
 }
 
@@ -86,3 +86,8 @@ a:hover {
   color: #222;
 }
 
+.navbar .nav li.selected a.selected {
+  color: #3c0;
+  text-shadow: none;
+  font-weight: bold;
+}

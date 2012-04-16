@@ -6,7 +6,8 @@ class Admin::CategoriesController < AdminController
   end
 
   def new
-    @category = Category.new(:category_id => params[:category_id])
+    @parent_category = Category.find(params[:category_id])
+    @category = Category.new(:category_id => @parent_category.id)
   end
 
   def create

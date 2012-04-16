@@ -1,7 +1,12 @@
-%article.news_item.item.span8{:id => "news_#{news.id}"}
+%article.news_item.item.span12{:id => "news_#{news.id}"}
   %h1
-    = news.title
-    %small= news.display_date
+    = "// #{news.title}"
+    %small
+      = news.display_date
+      = t('available_in')
+      = t('fr') if news.has_translation?(:fr)
+      = t('and_in') if news.has_translation?(:fr) and news.has_translation?(:en)
+      = t('en') if news.has_translation?(:en)
     %small
       %span.pull-right
         = link_to(t('edit'), edit_admin_news_path(news))

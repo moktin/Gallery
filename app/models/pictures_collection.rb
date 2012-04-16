@@ -3,7 +3,7 @@ class PicturesCollection
   extend ActiveModel::Naming
   extend ActiveModel::Translation
 
-  attr_accessor :description, :dimensions, :technic, :materials, :year,  :pictures, :categories, :category_ids, :year
+  attr_accessor :description, :dimensions, :technic, :materials, :year,  :pictures, :categories, :category_ids
 
   def initialize(attributes = {})
     attributes.each do |name, value|

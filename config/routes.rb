@@ -49,6 +49,7 @@ Gallery::Application.routes.draw do
     resources :pictures, :except => [:show, :create, :new]
     resources :pictures_collections, :only => [:create, :new]
     resources :categories, :except => [:show] do
+      resources :categories, :only => [:new]
       resources :pictures, :only => [:index] do
         collection do
           put :update_positions

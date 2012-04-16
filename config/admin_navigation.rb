@@ -51,9 +51,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :home, 'home', admin_root_path
     primary.item :news, 'news', admin_news_index_path
-    primary.item :categories, 'categories', admin_categories_path
-    primary.item :pictures, 'pictures', admin_pictures_path
-    primary.item :pages, 'pages', admin_pages_path
+    primary.item :categories, 'categories', admin_categories_path, :highlights_on => /admin\/categories/
+    primary.item :pictures, 'pictures', admin_pictures_path, :highlights_on => /admin\/pictures/
+    primary.item :pages, 'pages', admin_pages_path, :highlights_on => /admin\/pages/
 
   end
 

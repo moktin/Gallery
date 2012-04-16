@@ -52,7 +52,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :home, 'news', root_path
     Category.roots.each do |category|
       if category.has_children? and category.has_children_with_pictures?
-        primary.item category.name.to_sym, category.name.downcase, category_path(category)
+        primary.item category.name.to_sym, category.name.downcase, category_path(category), :highlights_on => lambda { @category and (@category.slug == category.slug or (@category.category and @category.category.slug = category.slug)) }
       elsif not category.has_children? and category.pictures.any?
         primary.item category.name.to_sym, category.name.downcase, category_pictures_path(category)
       end

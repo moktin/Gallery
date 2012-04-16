@@ -15,7 +15,7 @@ gem 'kaminari'
 gem 'draper'
 gem 'thin'
 gem "friendly_id", "~> 4.0.1"
-gem 'globalize3'
+gem 'traco'
 
 # Gems used only for assets and not required
 # in production environments by default.

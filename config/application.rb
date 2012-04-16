@@ -31,7 +31,7 @@ module Gallery
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :fr
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -57,5 +57,8 @@ module Gallery
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
     config.assets.precompile += %w( jquery-ui-1.8.18.custom.css jquery-ui-1.8.18.custom.min.js admin/admin.js ckeditor/ckeditor.js ckeditor/config.js ckeditor/lang/en.js)
+
+    #globalize, when no translations, then return the default locale translations
+    config.i18n.fallbacks = true
   end
 end
