@@ -16,19 +16,5 @@
   .form-actions
     = form.submit :class => 'btn-primary'
 
-= javascript_include_tag "ckeditor/ckeditor.js"
+= javascript_include_tag 'ckeditor/ckeditor.js'
 
-:javascript
-  function setCkeditor(textarea) {
-      CKEDITOR.replace(textarea[0], {
-          lang: 'fr',
-          toolbar:
-          [
-              ['Bold', 'Italic', 'Underline', '-', 'BulletedList', 'Link','Unlink']
-          ]
-      });
-  }
-
-  $(document).ready(function() {
-      setCkeditor($('.editor'));
-  })

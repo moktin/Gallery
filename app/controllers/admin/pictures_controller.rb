@@ -1,6 +1,7 @@
 class Admin::PicturesController < AdminController
   respond_to :html, :js
   before_filter :set_referer, :only => [:edit]
+  before_filter :fix_default_year_date, :only => [:update]
 
   def index
     if params[:category_id]

@@ -72,15 +72,15 @@ en:
     day_names: [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
     month_names: [~, januar, february, march, april, may, juny, july, august, september, october, november, december]
     formats:
-      really_short: "%A %d"
-      some_short: "%A %d %B"
-      short: "%A %d %B %Y"
+      really_short: "%d"
+      some_short: "%d %B"
+      short: "%d %B %Y"
       year: "%Y"
   time:
     formats:
       date: "%Y-%m-%d"
 
-  from: From
+  from:
   the: The
   to: to
   or: or

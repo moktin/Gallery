@@ -1,17 +1,20 @@
 - title(t("pictures.for_category", :category => @category.name), false)
-#myCarousel.carousel.span8
-  .carousel-inner
-    - @pictures.each do |picture|
-      .item
-        = image_tag(picture.image(:normal))
-        .carousel-caption
-          = picture.name_and_year
-          = picture.materials_technic_dimensions
-          .description= picture.description
+.row
+  #myCarousel.carousel.span8
+    .carousel-inner
+      - @pictures.each do |picture|
+        .item
+          .image-container
+            = image_tag(picture.image(:normal))
+          .carousel-caption
+            = picture.name_and_year
+            = picture.materials_technic_dimensions
+            .description= picture.description.try(:html_safe)
 
-  - if @pictures.length > 1
-    %a.carousel-control.left{:href => "#myCarousel", :'data-slide' => "prev"} &lsaquo;
-    %a.carousel-control.right{:href => "#myCarousel", :'data-slide' => "next"} &rsaquo;
+
+    - if @pictures.length > 1
+      %a.carousel-control.left{:href => "#myCarousel", :'data-slide' => "prev"} &lsaquo;
+      %a.carousel-control.right{:href => "#myCarousel", :'data-slide' => "next"} &rsaquo;
 
 :javascript
   $('.carousel-inner .item').first().addClass('active')

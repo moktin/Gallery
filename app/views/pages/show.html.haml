@@ -1,2 +1,6 @@
-- title(@page.name)
-= @page.content.html_safe
+- title(@page.name, false)
+%br
+%br
+.row
+  .span12
+    = @page.content.html_safe

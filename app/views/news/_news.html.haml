@@ -1,5 +1,2 @@
-%article.news_item.item.span12{:id => "news_#{news.id}"}
-  %h1
-    = "// #{news.title}"
-    %small= news.display_date
+%article.news_item.item.span8{:id => "news_#{news.id}"}
   = render 'news/news_content', :news => news

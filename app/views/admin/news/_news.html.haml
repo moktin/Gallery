@@ -1,17 +1,14 @@
-%article.news_item.item.span12{:id => "news_#{news.id}"}
-  %h1
-    = "// #{news.title}"
-    %small
-      = news.display_date
+%article.news_item.item.span8{:id => "news_#{news.id}"}
+  = render 'news/news_content', :news => news
+  %span
+    = link_to(t('edit'), edit_admin_news_path(news))
+    |
+    = link_to(t('destroy'), admin_news_path(news), :method => :delete)
+    |
+    = link_to(t('translate'), edit_admin_news_path(news, :translate => true))
+    .red
       = t('available_in')
       = t('fr') if news.has_translation?(:fr)
       = t('and_in') if news.has_translation?(:fr) and news.has_translation?(:en)
       = t('en') if news.has_translation?(:en)
-    %small
-      %span.pull-right
-        = link_to(t('edit'), edit_admin_news_path(news))
-        |
-        = link_to(t('destroy'), admin_news_path(news), :method => :delete)
-        |
-        = link_to(t('translate'), edit_admin_news_path(news, :translate => true))
-  = render 'news/news_content', :news => news
+

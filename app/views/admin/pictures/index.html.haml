@@ -9,4 +9,5 @@
 .row
   %ul#pictures_list{:'data-category-id' => @category ? @category.id : nil}
     = render @pictures
-  = paginate(@pictures) unless @category
+  .clear
+    = paginate(@pictures) unless @category

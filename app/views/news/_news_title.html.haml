@@ -1,0 +1,5 @@
+%h1
+  - unless news.display_date.blank?
+    %small= news.display_date
+    %br
+  = "#{news.title}"

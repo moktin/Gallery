@@ -3,3 +3,6 @@ prepareNav = ->
 
 $(document).ready ->
   prepareNav()
+  $('li.disabled a').live('click', ->
+    return false;
+  )

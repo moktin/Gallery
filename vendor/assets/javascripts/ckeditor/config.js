@@ -5,7 +5,10 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig = function( config )
 {
-	// Define changes to default configuration here. For example:
-	// config.language = 'fr';
-	// config.uiColor = '#AADC6E';
+        // Define changes to default configuration here. For example:
+        // config.language = 'fr';
+        // config.uiColor = '#AADC6E';
+    config.forcePasteAsPlainText = true;
+    config.ignoreEmptyParagraph = true;
+    config.enterMode = CKEDITOR.ENTER_BR;
 };

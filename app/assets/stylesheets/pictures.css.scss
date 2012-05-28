@@ -6,6 +6,36 @@
   height: 80px;
 }
 
-.container.pictures .carousel .carousel-inner .item {
-  height: 700px;
+.container.pictures .carousel {
+  .carousel-control {
+    background: none;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    color: #000;
+    border: none;
+    font-size: 20px;
+    top: 50%;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    width: 0px;
+  }
+  .carousel-control.left {
+    left: 0px;
+  }
+  .carousel-control.right {
+    right: 7px;
+  }
+  .image-container {
+    height: 500px;
+  }
+  .carousel-inner .item {
+    height: 700px;
+  }
+
+  text-align: center;
+
+  img {
+    display: inline;
+  }
 }

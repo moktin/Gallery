@@ -1,5 +1,4 @@
 class News < ActiveRecord::Base
-  validates :start_at, :presence => true
   validate :start_at_inferior_to_end_at
   has_many :pictures, :dependent => :destroy
 

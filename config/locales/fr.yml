@@ -31,6 +31,8 @@ fr:
         name: Nom
         name_fr: Nom en francais
         name_en: Nom en anglais
+      picture:
+        technic: technique
 
   edit: 'editer'
   destroy: 'supprimer'
@@ -69,9 +71,9 @@ fr:
     day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
     month_names: [~, janvier, février, mars, avril, mai, juin, juillet, aôut, septembre, octobre, novembre, decembre]
     formats:
-      really_short: "%A %d"
-      some_short: "%A %d %B"
-      short: "%A %d %B %Y"
+      really_short: "%d"
+      some_short: "%d %B"
+      short: "%d %B %Y"
       year: "%Y"
   time:
     formats:
@@ -90,7 +92,7 @@ fr:
       child: 'Créer une sous catégorie'
       child_for: 'Créer une sous catégorie pour'
 
-  from: à partir du
+  from:
   from_to: du
   to: au
   name: nom

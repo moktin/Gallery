@@ -31,9 +31,7 @@ class PictureDecorator < ApplicationDecorator
   #   end
 
   def name_and_year
-    if not self.name.blank? or not self.year.blank?
-      h.content_tag(:div, [self.name.blank? ? nil : "\"#{self.name}\"", self.year ? I18n.l(self.year, :format => :year) : nil].reject{|a| a.blank?}.join(', '))
-    end
+    h.content_tag(:div, [self.name.blank? ? "Sans titre" : "#{self.name}", self.year ? I18n.l(self.year, :format => :year) : nil].reject{|a| a.blank?}.join(', '))
   end
 
   def materials_technic_dimensions

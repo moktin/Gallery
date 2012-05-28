@@ -36,6 +36,12 @@ class ApplicationController < ActionController::Base
     I18n.locale.to_sym
   end
 
+  protected
+  def fix_default_year_date
+    params[:pictures_collection]['year(2i)'] = '1'
+    params[:pictures_collection]['year(3i)'] = '1'
+  end
+
   private
   def set_user_language
     I18n.locale = params[:locale] || session[:language] || I18n.default_locale
