@@ -32,8 +32,8 @@ class NewsDecorator < ApplicationDecorator
 
   def display_date
     if start_at or end_at
+      display_date = "// "
       if start_at and end_at
-        display_date = "// "
         if start_at.month == end_at.month and start_at.year == end_at.year
           display_date << "#{I18n.t('from_to')} #{I18n.l(start_at, :format => :really_short)} #{I18n.t('to')} #{I18n.l(end_at, :format => :short)}"
         elsif start_at.year == end_at.year
@@ -42,7 +42,7 @@ class NewsDecorator < ApplicationDecorator
           display_date << "#{I18n.t('from_to')} #{I18n.l(start_at, :format => :short)} #{I18n.t('to')} #{I18n.l(end_at, :format => :short)}"
         end
       elsif start_at
-        display_date << "#{I18n.t('from')} #{I18n.l(start_at, :format => :short)}"
+        display_date << "#{I18n.t('from')} #{I18n.l(start_at, :format => :short_with_day)}"
       end
       (display_date << " //").html_safe
     end

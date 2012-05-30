@@ -73,8 +73,9 @@ fr:
     formats:
       really_short: "%d"
       some_short: "%d %B"
-      short: "%d %B %Y"
+      short: "%A %d %B %Y"
       year: "%Y"
+      short_with_day: "%A %d %B %Y"
   time:
     formats:
       date: "%Y-%m-%d"
@@ -92,7 +93,7 @@ fr:
       child: 'Créer une sous catégorie'
       child_for: 'Créer une sous catégorie pour'
 
-  from:
+  from: ''
   from_to: du
   to: au
   name: nom

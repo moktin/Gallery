@@ -9,4 +9,5 @@ setCkeditor = (textarea) ->
 
 
 $(document).ready ->
-  setCkeditor($('.editor'));
+  if $('.editor').length > 0
+    setCkeditor($('.editor'));

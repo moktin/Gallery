@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413172012) do
+ActiveRecord::Schema.define(:version => 20120519174726) do
 
   create_table "categories", :force => true do |t|
     t.integer  "category_id"
@@ -72,6 +72,11 @@ ActiveRecord::Schema.define(:version => 20120413172012) do
     t.string   "technic"
     t.string   "materials"
     t.date     "year"
+    t.string   "support"
+    t.string   "collection"
+    t.float    "price"
+    t.float    "selling_price"
+    t.string   "location"
   end
 
   create_table "users", :force => true do |t|

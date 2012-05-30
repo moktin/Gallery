@@ -76,6 +76,7 @@ en:
       some_short: "%d %B"
       short: "%d %B %Y"
       year: "%Y"
+      short_with_day: "%A %d %B %Y"
   time:
     formats:
       date: "%Y-%m-%d"
