@@ -1,17 +1,14 @@
 = simple_form_for([:admin, @news], :html => { :class => 'form-vertical', :multipart => true }) do |form|
-  - unless params[:translate]
-    = form.input :title, :input_html => { :class => "span6" }
-    = form.input :content, :input_html => { :class => "span6 editor" }, :as => :text
-    = form.input :start_at, :as => :string, :input_html => { :class => "datepicker" }
-    = form.input :end_at, :as => :string, :input_html => { :class => "datepicker" }
-    = form.input :images, :as => :file, :input_html => { :multiple => true, :accept => 'image/*' }
+  = form.input :title_en, :input_html => { :class => "span6" }
+  = form.input :title_fr, :input_html => { :class => "span6" }
+  = form.input :content_en, :input_html => { :class => "span6 editor" }, :as => :text
+  = form.input :content_fr, :input_html => { :class => "span6 editor" }, :as => :text
+  = form.input :start_at, :as => :string, :input_html => { :class => "datepicker" }
+  = form.input :end_at, :as => :string, :input_html => { :class => "datepicker" }
+  = form.input :images, :as => :file, :input_html => { :multiple => true, :accept => 'image/*' }
+  = form.input :published
 
-    = render 'admin/news/pictures'
-
-  - else
-    = form.input "title_#{other_locale}", :input_html => { :class => "span6" }
-    = form.input "content_#{other_locale}", :input_html => { :class => "span6 editor" }, :as => :text
-    = hidden_field_tag :locale, other_locale
+  = render 'admin/news/pictures'
 
   .form-actions
     = form.submit :class => 'btn-primary'

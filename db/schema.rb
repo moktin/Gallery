@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519174726) do
+ActiveRecord::Schema.define(:version => 20120922160904) do
 
   create_table "categories", :force => true do |t|
     t.integer  "category_id"
@@ -37,12 +37,13 @@ ActiveRecord::Schema.define(:version => 20120519174726) do
   create_table "news", :force => true do |t|
     t.date     "start_at"
     t.date     "end_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "title_fr"
     t.string   "title_en"
     t.text     "content_fr"
     t.text     "content_en"
+    t.boolean  "published",  :default => false
   end
 
   create_table "pages", :force => true do |t|
@@ -58,6 +59,12 @@ ActiveRecord::Schema.define(:version => 20120519174726) do
   add_index "pages", ["online"], :name => "index_pages_on_online"
   add_index "pages", ["slug"], :name => "index_pages_on_slug"
 
+  create_table "picture_informations", :force => true do |t|
+    t.string "name_fr"
+    t.string "name_en"
+    t.string "type"
+  end
+
   create_table "pictures", :force => true do |t|
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -68,15 +75,22 @@ ActiveRecord::Schema.define(:version => 20120519174726) do
     t.integer  "news_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.string   "dimensions"
-    t.string   "technic"
-    t.string   "materials"
     t.date     "year"
-    t.string   "support"
-    t.string   "collection"
     t.float    "price"
     t.float    "selling_price"
-    t.string   "location"
+    t.integer  "support_id"
+    t.integer  "collection_id"
+    t.integer  "location_id"
+    t.integer  "dimension_id"
+    t.integer  "technic_id"
+    t.integer  "material_id"
+    t.string   "dimension_extra"
+    t.string   "technic_extra"
+    t.string   "support_extra"
+    t.string   "collection_extra"
+    t.string   "material_extra"
+    t.string   "location_extra"
+    t.text     "personal_note"
   end
 
   create_table "users", :force => true do |t|

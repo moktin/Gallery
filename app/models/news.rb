@@ -5,6 +5,7 @@ class News < ActiveRecord::Base
   translates :title, :content
 
   default_scope order('created_at DESC')
+  scope :published, where(:published => true)
 
   def self.with_translation(locale = I18n.locale)
     other_locale = locale.to_s == 'fr' ? 'en' : 'fr'

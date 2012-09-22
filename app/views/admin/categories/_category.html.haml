@@ -3,7 +3,7 @@
   = link_to("(#{category.pictures.count} #{t('pictures.label')})", admin_category_pictures_path(category)) unless category.has_children?
   = link_to(t('categories.new.child'), new_admin_category_category_path(:category_id => category))
   |
-  = link_to(t('destroy'), admin_category_path(category), :method => :delete)
+  = link_to(t('destroy'), admin_category_path(category), :method => :delete, :confirm => "Are you sure you want to delete that item ?")
   %ul.sub_categories
     - category.categories.each do |child_category|
       %li.sub_category{:id => "category_#{child_category.id}"}

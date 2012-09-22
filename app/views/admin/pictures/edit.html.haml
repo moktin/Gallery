@@ -3,18 +3,31 @@
     = t('pictures.edit')
     %small
       = t('or')
-      = link_to(t('pictures.destroy_it'), admin_picture_path(@picture), :method => :delete)
+      = link_to(t('pictures.destroy_it'), admin_picture_path(@picture), :method => :deletem, :confirm => "Are you sure you want to delete that item ?")
 
 %section= image_tag(@picture.image.url(:normal))
 
 = simple_form_for([:admin, @picture], :html => { :class => 'form-vertical', :multipart => true, :novalidate => true }) do |form|
   = form.input :name, :input_html => { :class => "span6" }, :required => false
   = form.input :description, :input_html => { :class => "span6" }, :required => false
-  = form.input :dimensions, :input_html => { :class => "span6" }, :required => false
-  = form.input :technic, :input_html => { :class => "span6" }, :required => false
-  = form.input :materials, :input_html => { :class => "span6" }, :required => false
+  = form.association :dimension, :input_html => { :class => "span3" }, :required => false, :wrapper_html => {:class => 'left two_col'}
+  = form.input :dimension_extra, :input_html => { :class => "span3" }, :required => false
+  = form.association :collection, :input_html => { :class => "span3" }, :required => false, :wrapper_html => {:class => 'left two_col'}
+  = form.input :collection_extra, :input_html => { :class => "span3" }, :required => false
+  = form.association :location, :input_html => { :class => "span3" }, :required => false, :wrapper_html => {:class => 'left two_col'}
+  = form.input :location_extra, :input_html => { :class => "span3" }, :required => false
+  = form.association :technic, :input_html => { :class => "span3" }, :required => false, :wrapper_html => {:class => 'left two_col'}
+  = form.input :technic_extra, :input_html => { :class => "span3" }, :required => false
+  = form.association :support, :input_html => { :class => "span3" }, :required => false, :wrapper_html => {:class => 'left two_col'}
+  = form.input :support_extra, :input_html => { :class => "span3" }, :required => false
+  = form.association :material, :input_html => { :class => "span3" }, :required => false, :wrapper_html => {:class => 'left two_col'}
+  = form.input :material_extra, :input_html => { :class => "span3" }, :required => false
+  = form.input :price, :input_html => { :class => "span6" }, :required => false
+  = form.input :selling_price, :input_html => { :class => "span6" }, :required => false
   = form.input :year, :input_html => { :class => "span6" }, :required => false, :discard_day => true, :discard_month => true, :as => :date, :order => [:year], :prompt => ''
   = form.input :category_ids, :input_html => { :class => "span1" }, :required => false, :collection => Category.childless, :as => :check_boxes unless Category.childless.blank?
   = form.input :image, :as => :file, :input_html => { :accept => 'image/*' }
+  = form.input :personal_note, :input_html => { :class => "span6" }
+
   .form-actions
     = form.submit :class => 'btn-primary'

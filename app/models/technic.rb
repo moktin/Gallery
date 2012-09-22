@@ -1,0 +1,2 @@
+class Technic < PictureInformation
+end
